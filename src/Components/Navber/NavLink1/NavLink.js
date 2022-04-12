@@ -1,7 +1,14 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 
 const NavLink = () => {
+  const [user] = useAuthState(auth)
+  const logout = () => {
+    signOut(auth)
+  }
     return (
       <div>
         <div className=" bg-transparent flex items-center  justify-between py-5 ">
@@ -15,9 +22,15 @@ const NavLink = () => {
             <Link to="/rooms">Rooms</Link>
             <Link to="/booking">Booking</Link>
             <Link to="/about">About</Link>
-            <Link to="/login" className="bg-cyan-600 px-6 py-1 rounded-md">
-              Login
-            </Link>
+            {user ? (
+              <Link onClick={logout} to="/login" className="bg-cyan-600 px-6 py-1 rounded-md">
+                Sign Out
+              </Link>
+            ) : (
+              <Link to="/login" className="bg-cyan-600 px-6 py-1 rounded-md">
+                Login
+              </Link>
+            )}
           </ul>
         </div>
       </div>

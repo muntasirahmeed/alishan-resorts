@@ -8,7 +8,7 @@ import Room from "../Room/Room";
 const Rooms = () => {
   const [rooms, setRooms] = useRooms();
   return (
-    <div>
+    <div className="mb-16">
       <NavLink2></NavLink2>
       <div className="px-10 mb-10">
         <h1 className="text-center my-10 text-4xl text-gray-600 font-semibold">

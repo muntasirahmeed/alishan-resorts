@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Room = ({room}) => {
+const Room = ({ room }) => {
+  const navigate = useNavigate()
+  
     console.log(room);
     const { name, image,price} = room;
     return (
@@ -14,7 +17,7 @@ const Room = ({room}) => {
           >
             Price : <span className="font-bold text-gray-800">${price}</span>
           </p>
-          <button className=" bg-cyan-600 px-6 py-1 text-white rounded">
+          <button onClick={()=>navigate('/booking')} className=" bg-cyan-600 px-6 py-1 text-white rounded">
             Book
           </button>
         </div>

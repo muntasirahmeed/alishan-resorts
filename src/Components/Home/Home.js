@@ -9,7 +9,7 @@ const Home = () => {
   const [rooms, setRooms] = useRooms()
   const navigate = useNavigate()
   return (
-    <div>
+    <div className="mb-16">
       <Navber></Navber>
       <div className="px-10 mb-10">
         <h1 className="text-center my-10 text-4xl text-gray-600 font-semibold">SOME OF OUR ROOMS</h1>
