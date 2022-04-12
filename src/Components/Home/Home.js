@@ -1,11 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useRooms from "../../Hooks/useRooms";
 import Navber from "../Navber/Navber";
 import Room from "../Room/Room";
 import "./Home.css";
 
 const Home = () => {
-  const [rooms,setRooms]=useRooms()
+  const [rooms, setRooms] = useRooms()
+  const navigate = useNavigate()
   return (
     <div>
       <Navber></Navber>
@@ -15,7 +17,7 @@ const Home = () => {
           {rooms.slice(0,3).map(room=><Room key={room.id} room={room}></Room>)}
         </div>
       </div>
-      <button className=" bg-cyan-600 px-6 py-2 block mx-auto text-white rounded">
+      <button onClick={()=>navigate('/rooms')} className=" bg-cyan-600 px-6 py-2 block mx-auto text-white rounded">
             See All Rooms
           </button>
     </div>
