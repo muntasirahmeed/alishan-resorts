@@ -1,0 +1,10 @@
+.hello {
+  background-image: url("../../images/HeaderImg.jpg"),linear-gradient(rgba(0,0,0,0.7),rgba(0, 0, 0, 0.3))
+  ;
+  background-blend-mode: overlay;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
